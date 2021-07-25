@@ -1,5 +1,8 @@
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Home from '../pages/home';
+
+import './style.scss';
 
 const Router: React.FC<any> = ({
   children
@@ -11,9 +14,7 @@ const Router: React.FC<any> = ({
 
         <div className='app-content'>
           <Switch>
-            <Route exact path='/'>
-              Hello world!
-            </Route>
+            <Route exact path='/' component={Home} />
           </Switch>
         </div>
       </BrowserRouter>

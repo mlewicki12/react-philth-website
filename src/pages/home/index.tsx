@@ -1,9 +1,12 @@
 
+import Highlights from '../../components/highlights';
+import './style.scss';
+
 const Home = () => {
   return (
-    <>
-      hello world
-    </>
+    <div className='home'>
+      <Highlights />
+    </div>
   );
 }
 

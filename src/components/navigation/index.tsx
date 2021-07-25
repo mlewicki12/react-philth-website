@@ -1,8 +1,13 @@
+
 import { Link } from "react-router-dom";
+import './style.scss';
 
 const Navigation = () => {
   return (
     <nav>
+      <Link to='/' id='logo'>
+        Philth Zine
+      </Link>
       <div className='links'>
         <Link to='/'>Home</Link>
         <Link to='/about'>About</Link>
