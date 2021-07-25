@@ -1,10 +1,14 @@
 
 import Router from './router';
-import './App.css';
+import './App.scss';
+import Navigation from './components/navigation';
 
 function App() {
   return (
-    <Router />
+    <Router>
+      {false && <h1 className='app-title'>PHILTH ZINE</h1>}
+      <Navigation />
+    </Router>
   );
 }
 

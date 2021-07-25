@@ -1,15 +1,23 @@
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-const Router = () => {
+const Router: React.FC<any> = ({
+  children
+}) => {
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route exact path='/'>
-          Hello world!
-        </Route>
-      </Switch>
-    </BrowserRouter>
+    <div className='app-root'>
+      <BrowserRouter>
+        {children}
+
+        <div className='app-content'>
+          <Switch>
+            <Route exact path='/'>
+              Hello world!
+            </Route>
+          </Switch>
+        </div>
+      </BrowserRouter>
+    </div>
   )
 }
 
