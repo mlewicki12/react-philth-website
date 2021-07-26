@@ -42,5 +42,9 @@ nav {
       text-decoration: underline;
       font-family: 'RadioNewsman', sans;
     }
+
+    > a:hover {
+      color: darken(white, 20%);
+    }
   }
 }

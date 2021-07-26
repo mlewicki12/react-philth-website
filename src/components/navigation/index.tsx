@@ -9,7 +9,6 @@ const Navigation = () => {
         Philth Zine
       </Link>
       <div className='links'>
-        <Link to='/'>Home</Link>
         <Link to='/about'>About</Link>
         <Link to='/articles'>Articles</Link>
         <Link to='/reviews'>Reviews</Link>

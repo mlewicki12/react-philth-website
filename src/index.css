@@ -7,3 +7,8 @@ body {
 
   overflow: hidden;
 }
+
+a {
+  transition-duration: 250ms;
+  transition-timing-function: ease;
+}
