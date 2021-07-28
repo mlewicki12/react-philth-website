@@ -1,21 +1,34 @@
 
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
+import Navigation from '../components/navigation';
+import SignUp from '../components/sign-in';
 import * as Routes from '../constants/routes';
+import { useUser } from '../firebase';
 
 import Home from '../pages/home';
 import './style.scss';
 
-const Router: React.FC<any> = ({
-  children
-}) => {
+const Router = () => {
+  const user = useUser();
+
   return (
     <div className='app-root'>
       <BrowserRouter>
-        {children}
+        <Navigation />
 
         <div className='app-content'>
           <Switch>
-            <Route exact path={Routes.HOME}  component={Home} />
+            <Route exact path={Routes.HOME} component={Home} />
+            <Route path={Routes.LOGIN}>
+              {!user
+              ? <SignUp />
+              : <Redirect to={Routes.HOME} />}
+            </Route>
+            <Route path={Routes.ADMIN}>
+              {user
+              ? <p>Hello {user.displayName}</p>
+              : <p>Not logged in!</p>}
+            </Route>
           </Switch>
         </div>
       </BrowserRouter>

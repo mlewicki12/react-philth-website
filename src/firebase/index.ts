@@ -1,6 +1,8 @@
 
-import app from 'firebase/app';
-import { createContext } from 'react';
+import firebase from 'firebase/app';
+import 'firebase/auth';
+
+import { createContext, useContext } from 'react';
 
 const config = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -13,12 +15,24 @@ const config = {
 }
 
 class Firebase {
+  auth: firebase.auth.Auth;
+  provider: firebase.auth.GoogleAuthProvider;
+
   constructor() {
-    app.initializeApp(config);
+    firebase.initializeApp(config);
+
+    this.auth = firebase.auth();
+    this.provider = new firebase.auth.GoogleAuthProvider();
   }
+
+  signIn = () => this.auth.signInWithPopup(this.provider);
+  signOut = () => this.auth.signOut();
 }
 
-const FirebaseContext = createContext<Firebase | null>(null);
+export const FirebaseContext = createContext<Firebase | null>(null);
+export const useFirebase = () => useContext(FirebaseContext);
+
+export const UserContext = createContext<firebase.User | null>(null);
+export const useUser = () => useContext(UserContext);
 
 export default Firebase;
-export { FirebaseContext };
