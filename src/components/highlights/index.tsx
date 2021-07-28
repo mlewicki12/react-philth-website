@@ -8,10 +8,10 @@ const Highlights = () => {
       <div className='highlights-container'>
         <img
           src={daydrunks}
-          alt='Daydrunks band playing in a basement'
+          alt='Daydrunks at Wharf Arts Center (2/28/2020)'
         />
         <div className='highlights-overlay'>
-          Daydrunks band playing at Wharf Arts Center
+          Daydrunks at Wharf Arts Center (2/28/2020)
         </div>
       </div>
     </div>
