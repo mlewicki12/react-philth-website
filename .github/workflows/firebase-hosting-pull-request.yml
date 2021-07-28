@@ -13,6 +13,7 @@ jobs:
         with:
           envkey_AUTH_DOMAIN: ${{ secrets.AUTH_DOMAIN }}
           envkey_PROJECT_ID: ${{ secrets.PROJECT_ID }}
+          envkey_TEST: gay
           envkey_STORAGE_BUCKET: ${{ secrets.STORAGE_BUCKET }}
           file_name: production.env
           github_workspace: ${{ github.workspace }}
