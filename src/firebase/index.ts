@@ -19,6 +19,7 @@ class Firebase {
   provider: firebase.auth.GoogleAuthProvider;
 
   constructor() {
+    console.log('initialising firebase with config: ', config);
     firebase.initializeApp(config);
 
     this.auth = firebase.auth();
