@@ -1,3 +1,6 @@
+
+import SlugInput from 'sanity-plugin-better-slug';
+
 export default {
   name: 'post',
   title: 'Post',
@@ -12,9 +15,11 @@ export default {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
+      inputComponent: SlugInput,
       options: {
         source: 'title',
-        maxLength: 96,
+        basePath: 'philthzine.com',
+        maxLength: 48,
       },
     },
     {
