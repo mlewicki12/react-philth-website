@@ -20,4 +20,4 @@ yarn-debug.log*
 yarn-error.log*
 
 # sanity modules
-philthzine/node_modules
+sanity/node_modules
