@@ -5,7 +5,7 @@ import './style.scss';
 
 const Home = () => {
   return (
-    <div className='home'>
+    <div className='home-page'>
       <Highlights />
       <div className='article'>
         <h2 className='article-title'>An Interview with Karl Roy on his new EP “Toys”</h2>

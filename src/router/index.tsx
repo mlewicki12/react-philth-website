@@ -13,32 +13,30 @@ const Router = () => {
   const user = useUser();
 
   return (
-    <div className='app-root'>
-      <BrowserRouter>
-        <Navigation />
+    <BrowserRouter>
+      <Navigation />
 
-        <div className='app-content'>
-          <Switch>
-            <Route exact path={Routes.HOME} component={Home} />
+      <div className='app-content'>
+        <Switch>
+          <Route exact path={Routes.HOME} component={Home} />
 
-            <Route path={Routes.LOGIN}>
-              {!user
-              ? <SignUp />
-              : <Redirect to={Routes.HOME} />}
-            </Route>
+          <Route path={Routes.LOGIN}>
+            {!user
+            ? <SignUp />
+            : <Redirect to={Routes.HOME} />}
+          </Route>
 
-            <Route path={Routes.ADMIN}>
-              {user
-              ? <p>Hello {user.displayName}</p>
-              : <p>Not logged in!</p>}
-            </Route>
+          <Route path={Routes.ADMIN}>
+            {user
+            ? <p>Hello {user.displayName}</p>
+            : <p>Not logged in!</p>}
+          </Route>
 
-            <Route path={`${Routes.ARTICLES}/:slug`} component={Article} />
-          </Switch>
-        </div>
-      </BrowserRouter>
-    </div>
-  )
+          <Route path={`${Routes.ARTICLES}/:slug`} component={Article} />
+        </Switch>
+      </div>
+    </BrowserRouter>
+  );
 }
 
 export default Router;

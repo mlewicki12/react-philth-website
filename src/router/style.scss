@@ -7,4 +7,11 @@
   padding-top: 4.5rem;
 
   box-sizing: border-box;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.app-content::-webkit-scrollbar {
+  display: none;
 }

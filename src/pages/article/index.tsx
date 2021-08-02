@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import BlockContent from '@sanity/block-content-to-react';
 
 import client, { getImageUrl } from "../../sanity";
+import './style.scss';
 
 type ArticleParams = {
   slug: string;
@@ -38,19 +39,19 @@ const Article = () => {
   if (!postData) return <div>Loading...</div>;
 
   return (
-    <div>
-      <div>
-        <h2>{postData.title}</h2>
-        <h4>by {postData.name}</h4>
+    <div className='article-page'>
+      <div className='info'>
+        <h1>{postData.title}</h1>
+        <p><span style={{fontStyle: 'italic'}}>by {postData.name}</span></p>
       </div>
-      <img src={getImageUrl(postData.mainImage).width(200).url() ?? ''} alt={postData.title} />
-      <div>
+      <div className='content'>
         <BlockContent
           blocks={postData.body}
           projectId={client.clientConfig.projectId}
           dataset={client.clientConfig.dataset}
         />
       </div>
+      <img src={getImageUrl(postData.mainImage).url() ?? ''} alt={postData.title} />
     </div>
   );
 }

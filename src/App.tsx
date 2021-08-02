@@ -22,9 +22,11 @@ const App = () => {
   }, [firebase]); // this should never change, but just in case
 
   return (
-    <UserContext.Provider value={user}>
-      <Router />
-    </UserContext.Provider>
+    <div className='app-root'>
+      <UserContext.Provider value={user}>
+        <Router />
+      </UserContext.Provider>
+    </div>
   );
 }
 

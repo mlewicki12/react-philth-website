@@ -25,6 +25,12 @@ export default {
       type: 'string',
     },
     {
+      name: 'spotify',
+      title: 'Spotify Link',
+      type: 'string',
+      required: true
+    },
+    {
       title: 'Art',
       name: 'art',
       type: 'image',
