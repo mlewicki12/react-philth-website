@@ -1,6 +1,6 @@
 
 export const basePath = 'philthzine.com';
-export const reviewPath = 'philthzine.com/reviews';
-export const articlePath = 'philthzine.com/articles';
+export const reviewPath = `${basePath}/reviews`;
+export const articlePath = `${basePath}/articles`;
 
 export const slugLength = 48;

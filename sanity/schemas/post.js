@@ -1,6 +1,6 @@
 
 import SlugInput from 'sanity-plugin-better-slug';
-import { basePath, slugLength } from './constants';
+import { articlePath, slugLength } from './constants';
 
 export default {
   name: 'post',
@@ -19,7 +19,7 @@ export default {
       inputComponent: SlugInput,
       options: {
         source: 'title',
-        basePath: basePath,
+        basePath: articlePath,
         maxLength: slugLength,
       },
     },
