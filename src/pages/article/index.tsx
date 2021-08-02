@@ -15,7 +15,7 @@ const Article = () => {
 
   useEffect(() => {
     client.fetch(
-      `*[slug.current == $slug]{
+      `*[_type == "post" && slug.current == $slug]{
         title,
         slug,
         mainImage{
@@ -28,7 +28,10 @@ const Article = () => {
         "name": author->name
       }`, {slug}
     )
-    .then(data => setPostData(data[0]))
+    .then(data => {
+      // returns empty array if slug doesn't exist
+      setPostData(data[0]);
+    })
     .catch(console.error);
   }, [slug]);
 
