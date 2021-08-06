@@ -1,5 +1,5 @@
 
-.home-page {
+.homePage {
   width: 100%;
   height: fit-content;
 
@@ -12,24 +12,24 @@
   grid-gap: 1.5rem;
 
   > .article {
-    > .article-title {
+    > .title {
       margin: 0;
     }
 
-    > .article-date {
+    > .date {
       font-style: italic;
       margin-top: 0;
     }
     
-    > .article-content {
+    > .content {
       margin-top: 0;
     }
 
-    > .article-link {
+    > .link {
       color: black;
     }
 
-    > .article-link:hover {
+    > .link:hover {
       color: lighten(black, 20%);
     }
   }

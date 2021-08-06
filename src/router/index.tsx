@@ -7,7 +7,7 @@ import { useUser } from '../firebase';
 import Article from '../pages/article';
 
 import Home from '../pages/home';
-import './style.scss';
+import styles from './style.module.scss';
 
 const Router = () => {
   const user = useUser();
@@ -16,7 +16,7 @@ const Router = () => {
     <BrowserRouter>
       <Navigation />
 
-      <div className='app-content'>
+      <div className={styles.content}>
         <Switch>
           <Route exact path={Routes.HOME} component={Home} />
 

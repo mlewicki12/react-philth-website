@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import BlockContent from '@sanity/block-content-to-react';
 
 import client, { getImageUrl } from "../../sanity";
-import './style.scss';
+import styles from './style.module.scss';
 
 type ArticleParams = {
   slug: string;
@@ -39,12 +39,12 @@ const Article = () => {
   if (!postData) return <div>Loading...</div>;
 
   return (
-    <div className='article-page'>
-      <div className='info'>
+    <div className={styles.articlePage}>
+      <div className={styles.info}>
         <h1>{postData.title}</h1>
         <p><span style={{fontStyle: 'italic'}}>by {postData.name}</span></p>
       </div>
-      <div className='content'>
+      <div className={styles.content}>
         <BlockContent
           blocks={postData.body}
           projectId={client.clientConfig.projectId}

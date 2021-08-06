@@ -4,7 +4,7 @@
   grid-row-end: 3;
   padding: 1.5rem;
 
-  .highlights-container {
+  .highlightsContainer {
     position: relative;
     box-sizing: border-box;
 
@@ -15,7 +15,7 @@
       box-sizing: border-box;
     }
 
-    > .highlights-overlay {
+    > .highlightsOverlay {
       position: absolute;
       bottom: 0;
       background: rgba(0, 0, 0, 0.5);
@@ -31,7 +31,7 @@
     }
   }
 
-  .highlights-container:hover .highlights-overlay {
+  .highlightsContainer:hover .highlightsOverlay {
     opacity: 1;
   }
 }

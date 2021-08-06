@@ -1,15 +1,15 @@
 
 import { Link } from "react-router-dom";
 import * as Routes from '../../constants/routes';
-import './style.scss';
+import styles from './style.module.scss';
 
 const Navigation = () => {
   return (
     <nav>
-      <Link to={Routes.HOME} id='logo'>
+      <Link to={Routes.HOME} className={styles.logo}>
         Philth Zine
       </Link>
-      <div className='links'>
+      <div className={styles.links}>
         <Link to={Routes.ABOUT}>About</Link>
         <Link to={Routes.ARTICLES}>Articles</Link>
         <Link to={Routes.REVIEWS}>Reviews</Link>
