@@ -13,6 +13,17 @@ export default {
       type: 'string',
     },
     {
+      name: 'author',
+      title: 'Author',
+      type: 'reference',
+      to: {type: 'author'},
+    },
+    {
+      name: 'album',
+      title: 'Album Info',
+      type: 'album'
+    },
+    {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
@@ -23,17 +34,6 @@ export default {
         maxLength: slugLength,
         source: doc => `${doc.album.artist}-${doc.album.title}`,
       },
-    },
-    {
-      name: 'author',
-      title: 'Author',
-      type: 'reference',
-      to: {type: 'author'},
-    },
-    {
-      name: 'album',
-      title: 'Album Info',
-      type: 'album'
     },
     {
       name: 'publishedAt',
